@@ -3,63 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CashNest - Login</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>.hidden { display: none; }</style>
+  <title>JWcashnest Bank - Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 40px;
+      font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .bank-name {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .form-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      width: 300px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #ffd700;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #e6c200;
+    }
+
+    .ads {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #ccc;
+      font-size: 12px;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<body>
+  <div class="login-container">
+    <div class="logo">JW</div>
+    <div class="bank-name">JWcashnest BANK</div>
 
-  <!-- Login Screen -->
-  <div id="login-screen" class="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm">
-    <h2 class="text-xl font-bold text-center mb-6">Login to CashNest</h2>
-    <input id="username" type="text" placeholder="User ID" class="w-full mb-3 px-3 py-2 border rounded" />
-    <input id="password" type="password" placeholder="Password" class="w-full mb-3 px-3 py-2 border rounded" />
-    <button onclick="login()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Login</button>
-    <p id="error-msg" class="text-red-500 text-sm mt-3 hidden">Invalid credentials. Try again.</p>
-  </div>
-
-  <!-- Dashboard -->
-  <div id="main-dashboard" class="hidden w-full max-w-2xl mx-auto p-4">
-    <header class="bg-blue-600 text-white text-center text-xl font-bold p-4 rounded-t-xl">CashNest Dashboard</header>
-    <div class="bg-white p-6 rounded-b-xl shadow">
-      <h2 class="text-lg font-semibold mb-2">👤 Account Holder:</h2>
-      <p class="text-gray-700 mb-4">Sukhdev Mondal</p>
-
-      <h2 class="text-lg font-semibold mb-2">💰 Account Balance:</h2>
-      <div class="flex items-center space-x-2">
-        <p id="balance-text" class="text-green-600 text-2xl font-bold hidden">₹6,84,50,000</p>
-        <button onclick="toggleBalance()" class="text-blue-600">👁 Show/Hide</button>
-      </div>
-
-      <h2 class="text-lg font-semibold mt-6 mb-2">📜 Transactions (Last 6 Months)</h2>
-      <ul class="max-h-60 overflow-y-auto space-y-2 text-sm">
-        <li class="flex justify-between border-b pb-1"><span>May 2025</span><span>-₹80,000</span></li>
-        <li class="flex justify-between border-b pb-1"><span>Apr 2025</span><span>-₹79,400</span></li>
-        <li class="flex justify-between border-b pb-1"><span>Mar 2025</span><span>-₹81,000</span></li>
-        <li class="flex justify-between border-b pb-1"><span>Feb 2025</span><span>-₹80,500</span></li>
-        <li class="flex justify-between border-b pb-1"><span>Jan 2025</span><span>-₹80,000</span></li>
-        <li class="flex justify-between border-b pb-1"><span>Dec 2024</span><span>-₹80,000</span></li>
-      </ul>
+    <div class="form-box">
+      <form id="loginForm">
+        <input type="text" id="userid" placeholder="User ID" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
     </div>
+
+    <div class="ads">Secure Banking | Trusted by Millions | 24x7 Support</div>
   </div>
+
+  <div class="footer">© 2025 JWcashnest Bank. All rights reserved.</div>
 
   <script>
-    function login() {
-      const user = document.getElementById('username').value.trim();
-      const pass = document.getElementById('password').value.trim();
-      if (user === '842014' && pass === '5k5k2525') {
-        document.getElementById('login-screen').classList.add('hidden');
-        document.getElementById('main-dashboard').classList.remove('hidden');
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const uid = document.getElementById("userid").value;
+      const pass = document.getElementById("password").value;
+
+      if (uid === "Sukhdev0505" && pass === "1000554845x") {
+        window.location.href = "home.html";
       } else {
-        document.getElementById('error-msg').classList.remove('hidden');
+        alert("Invalid User ID or Password");
       }
-    }
-
-    function toggleBalance() {
-      const balance = document.getElementById('balance-text');
-      balance.classList.toggle('hidden');
-    }
+    });
   </script>
-
 </body>
 </html>
+
